@@ -5,29 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- SEO: Title & Meta -->
-<title>PixelFit – Free Online Photo Resizer | Resize &amp; Compress Images Instantly</title>
-<meta name="description" content="PixelFit is a free, fast, and private online photo resizer and image compressor. Resize images by pixels, percentage, or preset sizes. Supports JPEG, PNG, and WebP. No uploads — works entirely in your browser.">
-<meta name="keywords" content="image resizer, photo resize online, free image compressor, pixel resize tool, resize jpg online, resize png free, image size reducer, compress photo online, resize image without quality loss, online image editor">
+<title>PixelFit – Resize Image, Image to PDF & AI Image Enhancer Online Free</title>
+<meta name="description" content="PixelFit is a free online tool to resize images, convert image to PDF, and enhance photos using AI. Supports JPEG, PNG, WebP. No upload required, fast, secure, and works directly in your browser.">
+<meta name="keywords" content="image resizer, image to pdf converter, ai image enhancer online, photo enhancer free, resize image online, compress image, pdf converter, online image tools">
 <meta name="author" content="Sourav Karak">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://souravkarak.github.io/">
-  <script>
-    if (window.location.pathname.startsWith("/mywebsite")) {
-      window.location.href = "https://souravkarak.github.io/";
-    }
-  </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1996350477590184"
-     crossorigin="anonymous"></script>
+<link rel="canonical" href="https://pixelfit.app/">
 
 <!-- Open Graph / Social -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="PixelFit – Free Online Photo Resizer &amp; Image Compressor">
-<meta property="og:description" content="Resize and compress your photos instantly in the browser. No upload needed. Supports JPEG, PNG, WebP. 100% free and private. Built by Sourav Karak.">
+<meta property="og:title" content="PixelFit – Resize Image, Image to PDF & AI Image Enhancer Online Free">
+<meta property="og:description" content="PixelFit is a free online tool to resize images, convert image to PDF, and enhance photos using AI. Supports JPEG, PNG, WebP. No upload required, fast, secure, and works directly in your browser.">
 <meta property="og:url" content="https://pixelfit.app/">
 <meta property="og:site_name" content="PixelFit">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="PixelFit – Free Online Photo Resizer">
-<meta name="twitter:description" content="Resize &amp; compress images for free — no upload, no sign-up, right in your browser.">
+<meta name="twitter:title" content="PixelFit – Resize Image, Image to PDF & AI Image Enhancer Online Free">
+<meta name="twitter:description" content="Resize images, convert photos to PDF, and enhance image quality using AI — all in one free online tool.">
 
 <!-- Schema.org Structured Data -->
 <script type="application/ld+json">
@@ -36,7 +29,7 @@
   "@type": "WebApplication",
   "name": "PixelFit",
   "url": "https://pixelfit.app/",
-  "description": "Free online photo resizer and image compressor. Resize by pixels, percentage, or social media presets. Supports JPEG, PNG, WebP. Works entirely in your browser — no uploads required.",
+  "description": "Free online tool to resize images, convert image to PDF, and enhance photos using AI. Supports JPEG, PNG, WebP. Works entirely in your browser — no uploads required.",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "Any",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -75,6 +68,169 @@
   --shadow: 0 2px 12px rgba(26,24,20,0.08);
   --shadow-lg: 0 8px 32px rgba(26,24,20,0.12);
   --nav-h: 64px;
+}
+/* ── DARK MODE VARIABLES ── */
+html.dark {
+  --bg: #0f0e0c;
+  --bg2: #1a1915;
+  --surface: #161410;
+  --border: #2e2b24;
+  --border2: #3a362d;
+  --ink: #f0ede6;
+  --ink2: #a09880;
+  --ink3: #605c50;
+  --accent: #e8440a;
+  --accent2: #c93a08;
+  --accent-bg: #1f1208;
+  --green: #2db86d;
+  --green-bg: #071a0f;
+  --shadow: 0 2px 12px rgba(0,0,0,0.35);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.5);
+}
+html.dark .formats-table tr:nth-child(even) td { background: var(--bg2); }
+html.dark .formats-table tr:hover td { background: var(--accent-bg); }
+html.dark details.faq { background: var(--surface); }
+
+/* ── DARK MODE TOGGLE BUTTON ── */
+.dm-toggle {
+  display: flex; align-items: center; gap: 7px;
+  background: none; border: 1px solid var(--border);
+  border-radius: 20px; padding: 6px 12px 6px 10px;
+  cursor: pointer; font-family: var(--font); font-size: 12px;
+  font-weight: 600; color: var(--ink2);
+  transition: border-color 0.18s, background 0.18s, color 0.18s;
+  flex-shrink: 0;
+}
+.dm-toggle:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
+.dm-toggle-icon { width: 16px; height: 16px; flex-shrink: 0; transition: transform 0.35s ease; }
+html.dark .dm-toggle-icon { transform: rotate(180deg); }
+.dm-toggle-label-light { display: inline; }
+.dm-toggle-label-dark  { display: none; }
+html.dark .dm-toggle-label-light { display: none; }
+html.dark .dm-toggle-label-dark  { display: inline; }
+
+/* ── AI ENHANCER WORKSPACE ── */
+#enhancer-workspace { display: none; animation: fadeUp 0.35s ease both; }
+#enhancer-workspace.on { display: block; }
+
+.enh-drop-zone {
+  border: 2px dashed var(--border2); border-radius: var(--r);
+  background: var(--surface); padding: 3.5rem 2rem; text-align: center;
+  cursor: pointer; transition: all 0.2s; position: relative; overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.enh-drop-zone:hover, .enh-drop-zone.drag { border-color: var(--accent); background: var(--accent-bg); }
+.enh-drop-zone::before {
+  content: ''; position: absolute; inset: 0;
+  background: repeating-linear-gradient(45deg,transparent,transparent 10px,rgba(232,68,10,0.025) 10px,rgba(232,68,10,0.025) 20px);
+  opacity: 0; transition: opacity 0.2s;
+}
+.enh-drop-zone:hover::before, .enh-drop-zone.drag::before { opacity: 1; }
+
+/* Enhance level selector */
+.enh-level-row { display: flex; gap: 8px; margin-top: 8px; }
+.enh-level-btn {
+  flex: 1; padding: 9px 6px; border-radius: var(--r-sm);
+  border: 1px solid var(--border); background: transparent;
+  font-size: 12px; font-family: var(--mono); font-weight: 500;
+  cursor: pointer; transition: all 0.15s; color: var(--ink2);
+}
+.enh-level-btn.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+.enh-level-btn:hover:not(.active) { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
+
+/* Compare slider */
+.enh-compare-wrap {
+  position: relative; overflow: hidden; border-radius: var(--r-sm);
+  background: repeating-conic-gradient(#e8e5de 0% 25%, #f5f3ee 0% 50%) 0 0 / 16px 16px;
+  cursor: ew-resize; user-select: none;
+  line-height: 0;
+}
+html.dark .enh-compare-wrap {
+  background: repeating-conic-gradient(#1e1c17 0% 25%, #0a0908 0% 50%) 0 0 / 16px 16px;
+}
+.enh-compare-wrap img {
+  display: block; width: 100%; height: auto;
+  max-height: 420px; object-fit: contain;
+}
+.enh-compare-after {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  overflow: hidden;
+}
+.enh-compare-after img {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: contain; max-height: none;
+}
+.enh-divider {
+  position: absolute; top: 0; bottom: 0;
+  width: 2px; background: rgba(255,255,255,0.9);
+  box-shadow: 0 0 6px rgba(0,0,0,0.5);
+  cursor: ew-resize; z-index: 5;
+}
+.enh-divider-handle {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--surface); box-shadow: 0 2px 10px rgba(0,0,0,0.35);
+  display: flex; align-items: center; justify-content: center;
+}
+.enh-divider-handle svg { width: 18px; height: 18px; }
+.enh-label {
+  position: absolute; top: 10px; z-index: 6;
+  background: rgba(0,0,0,0.55); color: #fff;
+  font-size: 10px; font-family: var(--mono); font-weight: 500;
+  letter-spacing: 1px; text-transform: uppercase;
+  padding: 3px 10px; border-radius: 20px;
+}
+.enh-label-before { left: 10px; }
+.enh-label-after  { right: 10px; }
+
+/* Progress bar */
+.enh-progress-wrap { margin: 12px 0 4px; }
+.enh-progress-bar {
+  height: 4px; background: var(--border);
+  border-radius: 2px; overflow: hidden;
+}
+.enh-progress-fill {
+  height: 100%; width: 0%; background: var(--accent);
+  border-radius: 2px; transition: width 0.15s linear;
+}
+.enh-progress-label { font-size: 11px; font-family: var(--mono); color: var(--ink3); margin-top: 5px; }
+
+/* Download button for enhancer */
+.enh-dl-btn {
+  width: 100%; padding: 16px; border-radius: var(--r);
+  background: var(--accent); border: none; color: #fff;
+  font-size: 16px; font-weight: 700; font-family: var(--font);
+  cursor: pointer; margin-top: 1.25rem;
+  transition: background 0.15s, transform 0.1s;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  letter-spacing: -0.3px;
+}
+.enh-dl-btn:hover { background: var(--accent2); }
+.enh-dl-btn:active { transform: scale(0.985); }
+.enh-dl-btn.done { background: var(--green); }
+.enh-dl-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+.enh-dl-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+/* Enhance button */
+.enh-run-btn {
+  width: 100%; padding: 14px; border-radius: var(--r);
+  background: var(--ink); border: none; color: #fff;
+  font-size: 15px; font-weight: 700; font-family: var(--font);
+  cursor: pointer; margin-top: 1rem;
+  transition: background 0.15s, transform 0.1s;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+.enh-run-btn:hover { background: var(--accent); }
+.enh-run-btn:active { transform: scale(0.985); }
+.enh-run-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+.enh-ai-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: linear-gradient(135deg, #7c3aed, #e8440a);
+  color: #fff; border-radius: 20px;
+  font-size: 10px; font-family: var(--mono); font-weight: 600;
+  padding: 3px 10px; letter-spacing: 0.5px;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html{background:var(--bg);font-family:var(--font);color:var(--ink);scroll-behavior:smooth;}
@@ -174,20 +330,20 @@ nav.open{
 .hero{
   text-align:center;
   padding:3.5rem 1.5rem 2.5rem;
-  max-width:680px;margin:0 auto;
+  max-width:760px;margin:0 auto;
 }
 .hero-badge{
   display:inline-flex;align-items:center;gap:7px;
-  background:var(--accent-bg);border:1px solid #f2c4b2;color:var(--accent);
+  background:var(--accent-bg);border:1px solid var(--border2);color:var(--accent);
   border-radius:20px;padding:5px 14px;
   font-size:11px;font-family:var(--mono);font-weight:500;
   margin-bottom:1.25rem;letter-spacing:0.5px;
 }
 .hero-badge::before{content:'';display:block;width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
-.hero h1{font-size:clamp(28px,5vw,46px);font-weight:700;letter-spacing:-1.5px;line-height:1.12;margin-bottom:1rem;}
+.hero h1{font-size:clamp(28px,4.5vw,42px);font-weight:700;letter-spacing:-1.2px;line-height:1.15;margin-bottom:1.25rem;}
 .hero h1 em{font-style:normal;color:var(--accent);}
-.hero-sub{font-size:16px;color:var(--ink2);line-height:1.6;max-width:520px;margin:0 auto;}
+.hero-sub{font-size:16px;color:var(--ink2);line-height:1.6;max-width:580px;margin:0 auto;}
 
 /* ═══════════════════════════════════════════════════
    AD SLOT HELPERS
@@ -206,7 +362,7 @@ nav.open{
 /* ═══════════════════════════════════════════════════
    MAIN CONTENT WRAPPER
 ═══════════════════════════════════════════════════ */
-.content-wrap{max-width:900px;margin:0 auto;padding:0 1.5rem 5rem;}
+.content-wrap{max-width:900px;margin:0 auto;padding:0 1.5rem 3rem;}
 
 /* ── DROP ZONE ── */
 .drop-zone{
@@ -251,6 +407,7 @@ nav.open{
   background:rgba(245,243,238,0.85);backdrop-filter:blur(4px);
   align-items:center;justify-content:center;flex-direction:column;gap:16px;
 }
+html.dark .loading-overlay{background:rgba(15,14,12,0.88);}
 .loading-overlay.on{display:flex;}
 .spinner{
   width:40px;height:40px;border:3px solid var(--border2);
@@ -349,7 +506,7 @@ nav.open{
 .compress-toggle-row{display:flex;align-items:center;gap:10px;}
 .compress-toggle-lbl{font-size:13px;font-weight:600;color:var(--ink);}
 .compress-note{font-size:11px;color:var(--ink3);font-family:var(--mono);margin-top:6px;}
-.compress-savings{display:none;margin-top:8px;padding:8px 12px;background:var(--green-bg);border:1px solid #b2e4cc;border-radius:var(--r-sm);font-size:12px;font-family:var(--mono);color:var(--green);}
+.compress-savings{display:none;margin-top:8px;padding:8px 12px;background:var(--green-bg);border:1px solid var(--border);border-radius:var(--r-sm);font-size:12px;font-family:var(--mono);color:var(--green);}
 .compress-savings.on{display:block;}
 
 /* ── PRESET CHIPS ── */
@@ -386,13 +543,15 @@ nav.open{
 .preview-empty-hint{font-size:12px;color:var(--ink3);font-family:var(--mono);position:absolute;}
 #preview-canvas{max-width:100%;max-height:400px;display:block;border-radius:4px;}
 .checker{background-image:repeating-conic-gradient(#ccc 0% 25%,white 0% 50%);background-size:16px 16px;}
+html.dark .checker{background-image:repeating-conic-gradient(#1e1c17 0% 25%,#161410 0% 50%);}
 
 /* ── COMPARE ── */
 .compare-row{display:flex;align-items:center;gap:10px;margin-top:1rem;}
 .compare-lbl{font-size:12px;color:var(--ink2);font-family:var(--mono);}
 .toggle{width:36px;height:20px;border-radius:10px;background:var(--border2);cursor:pointer;position:relative;transition:background 0.2s;border:none;flex-shrink:0;}
 .toggle.on{background:var(--accent);}
-.toggle::after{content:'';position:absolute;top:3px;left:3px;width:14px;height:14px;border-radius:50%;background:#fff;transition:transform 0.2s;}
+.toggle::after{content:'';position:absolute;top:3px;left:3px;width:14px;height:14px;border-radius:50%;background:var(--surface);transition:transform 0.2s;}
+html.dark .toggle::after{background:#e5e7eb;}
 .toggle.on::after{transform:translateX(16px);}
 
 /* ── DOWNLOAD BTN ── */
@@ -443,7 +602,7 @@ nav.open{
   transition:box-shadow 0.2s,transform 0.2s;
 }
 .feature-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px);}
-.feature-icon{width:40px;height:40px;border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;margin-bottom:.9rem;background:var(--accent-bg);border:1px solid #f2c4b2;}
+.feature-icon{width:40px;height:40px;border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;margin-bottom:.9rem;background:var(--accent-bg);border:1px solid var(--border2);}
 .feature-icon svg{width:20px;height:20px;}
 .feature-h{font-size:14px;font-weight:700;margin-bottom:5px;}
 .feature-p{font-size:13px;color:var(--ink2);line-height:1.55;}
@@ -476,6 +635,7 @@ details.faq summary::-webkit-details-marker{display:none;}
 details.faq summary::after{content:'+';font-size:20px;font-weight:400;color:var(--accent);transition:transform 0.2s;}
 details.faq[open] summary::after{transform:rotate(45deg);}
 details.faq .faq-body{padding:0 1.25rem 1.1rem;font-size:14px;color:var(--ink2);line-height:1.65;}
+details.faq .faq-body p{margin-bottom: 0.5rem;}
 
 /* ═══════════════════════════════════════════════════
    FORMATS TABLE
@@ -554,7 +714,7 @@ footer{
 .owner-name{font-size:22px;font-weight:700;letter-spacing:-0.5px;margin-bottom:4px;}
 .owner-role{
   display:inline-block;font-size:11px;font-family:var(--mono);
-  background:var(--accent-bg);color:var(--accent);border:1px solid #f2c4b2;
+  background:var(--accent-bg);color:var(--accent);border:1px solid var(--border2);
   border-radius:20px;padding:3px 12px;margin-bottom:10px;letter-spacing:.5px;
 }
 .owner-bio{font-size:15px;color:var(--ink2);line-height:1.65;}
@@ -565,6 +725,221 @@ footer{
   border-radius:20px;padding:3px 10px;
 }
 @media(max-width:480px){.owner-card{flex-direction:column;align-items:flex-start;}}
+
+/* ═══════════════════════════════════════════════════
+   TOOL SELECTOR
+═══════════════════════════════════════════════════ */
+.tool-selector{
+  display:flex;gap:12px;margin-bottom:1.5rem;
+  animation:fadeUp 0.35s ease both;
+}
+@media(max-width:500px){.tool-selector{flex-direction:column;}}
+.tool-card{
+  flex:1;display:flex;align-items:center;gap:14px;
+  background:var(--surface);border:2px solid var(--border);
+  border-radius:var(--r);padding:1.1rem 1.25rem;
+  cursor:pointer;transition:all 0.22s cubic-bezier(0.4,0,0.2,1);
+  position:relative;overflow:hidden;
+  box-shadow:var(--shadow);
+  user-select:none;
+}
+.tool-card::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(232,68,10,0.04),transparent);
+  opacity:0;transition:opacity 0.2s;
+}
+.tool-card:hover{border-color:var(--border2);transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+.tool-card:hover::after{opacity:1;}
+.tool-card.selected{
+  border-color:var(--accent);background:var(--accent-bg);
+  transform:translateY(-2px);
+  box-shadow:0 4px 20px rgba(232,68,10,0.18);
+}
+.tool-card.selected::after{opacity:1;}
+.tool-card-icon{
+  width:44px;height:44px;border-radius:var(--r-sm);
+  background:var(--bg2);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;transition:all 0.2s;
+}
+.tool-card.selected .tool-card-icon{
+  background:var(--accent);border-color:var(--accent);
+}
+.tool-card.selected .tool-card-icon svg path,
+.tool-card.selected .tool-card-icon svg rect,
+.tool-card.selected .tool-card-icon svg circle,
+.tool-card.selected .tool-card-icon svg polyline{
+  stroke:#fff !important;
+}
+.tool-card-icon svg{width:22px;height:22px;}
+.tool-card-body{flex:1;min-width:0;}
+.tool-card-title{font-size:14px;font-weight:700;margin-bottom:4px;color:var(--ink);}
+.tool-card-desc{font-size:12px;color:var(--ink2);line-height:1.45;}
+.tool-card-badge{
+  font-size:10px;font-family:var(--mono);
+  background:var(--green-bg);color:var(--green);
+  border:1px solid var(--border);border-radius:20px;padding:2px 8px;
+  flex-shrink:0;
+}
+.tool-card-badge--ai{
+  background:linear-gradient(135deg,#ede5ff,#fce8e0);
+  color:#7c3aed;border-color:#c9b8ff;
+}
+html.dark .tool-card-badge--ai{
+  background:linear-gradient(135deg,#2d1b69,#3b1506);
+  color:#c4b5fd;border-color:#5b3fa0;
+}
+.tool-card.selected .tool-checkmark{display:flex;}
+.tool-checkmark{
+  display:none;width:20px;height:20px;border-radius:50%;
+  background:var(--accent);align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.tool-checkmark svg{width:11px;height:11px;}
+
+/* Upload lock overlay */
+.upload-lock{
+  position:relative;
+}
+.upload-lock-msg{
+  position:absolute;inset:0;z-index:10;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  background:rgba(245,243,238,0.88);backdrop-filter:blur(2px);
+  border-radius:var(--r);cursor:default;
+  transition:opacity 0.3s,visibility 0.3s;
+}
+html.dark .upload-lock-msg{background:rgba(15,14,12,0.88);}
+.upload-lock-msg.hidden{opacity:0;visibility:hidden;pointer-events:none;}
+.upload-lock-icon{
+  width:48px;height:48px;border-radius:50%;
+  background:var(--bg2);border:1.5px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+}
+.upload-lock-icon svg{width:22px;height:22px;}
+.upload-lock-text{font-size:14px;font-weight:600;color:var(--ink2);}
+.upload-lock-sub{font-size:12px;color:var(--ink3);font-family:var(--mono);}
+
+/* ── PDF WORKSPACE ── */
+#pdf-workspace{display:none;animation:fadeUp 0.35s ease both;}
+#pdf-workspace.on{display:block;}
+
+.pdf-upload-zone{
+  border:2px dashed var(--border2);border-radius:var(--r);
+  background:var(--surface);padding:3rem 2rem;text-align:center;cursor:pointer;
+  transition:all 0.2s;position:relative;overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.pdf-upload-zone:hover,.pdf-upload-zone.drag{border-color:var(--accent);background:var(--accent-bg);}
+.pdf-upload-zone::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(45deg,transparent,transparent 10px,rgba(232,68,10,0.02) 10px,rgba(232,68,10,0.02) 20px);
+  opacity:0;transition:opacity 0.2s;
+}
+.pdf-upload-zone:hover::before,.pdf-upload-zone.drag::before{opacity:1;}
+
+.pdf-images-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));
+  gap:10px;margin-top:1.25rem;
+}
+.pdf-img-thumb{
+  position:relative;border-radius:var(--r-sm);overflow:hidden;
+  border:1.5px solid var(--border);background:var(--bg2);
+  aspect-ratio:1;display:flex;align-items:center;justify-content:center;
+  cursor:grab;transition:box-shadow 0.15s,transform 0.15s;
+}
+.pdf-img-thumb:hover{box-shadow:var(--shadow-lg);transform:scale(1.02);}
+.pdf-img-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+.pdf-thumb-remove{
+  position:absolute;top:4px;right:4px;
+  width:20px;height:20px;border-radius:50%;
+  background:rgba(26,24,20,0.7);border:none;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;opacity:0;transition:opacity 0.15s;
+}
+.pdf-img-thumb:hover .pdf-thumb-remove{opacity:1;}
+.pdf-thumb-remove svg{width:10px;height:10px;}
+.pdf-thumb-num{
+  position:absolute;bottom:4px;left:4px;
+  background:rgba(26,24,20,0.65);color:#fff;
+  font-size:10px;font-family:var(--mono);border-radius:4px;padding:1px 5px;
+}
+.pdf-add-more{
+  border-radius:var(--r-sm);border:2px dashed var(--border2);
+  background:transparent;aspect-ratio:1;display:flex;
+  flex-direction:column;align-items:center;justify-content:center;gap:6px;
+  cursor:pointer;transition:all 0.15s;color:var(--ink3);font-size:11px;
+  font-family:var(--mono);
+}
+.pdf-add-more:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-bg);}
+.pdf-add-more svg{width:24px;height:24px;}
+
+/* PDF options */
+.pdf-options-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:1.25rem;
+}
+@media(max-width:500px){.pdf-options-grid{grid-template-columns:1fr;}}
+.pdf-opt-label{font-size:11px;font-family:var(--mono);color:var(--ink3);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:8px;}
+.pdf-select{
+  width:100%;background:var(--bg);border:1px solid var(--border2);
+  border-radius:var(--r-sm);color:var(--ink);font-size:13px;
+  font-family:var(--font);padding:9px 12px;outline:none;cursor:pointer;
+  transition:border-color 0.15s;appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23a09890' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 12px center;padding-right:32px;
+}
+.pdf-select:focus{border-color:var(--accent);background-color:var(--accent-bg);}
+
+.margin-chips{display:flex;gap:6px;flex-wrap:wrap;}
+.margin-chip{
+  padding:5px 12px;border-radius:16px;
+  border:1px solid var(--border);background:var(--bg2);
+  font-size:11px;font-family:var(--mono);cursor:pointer;
+  transition:all 0.15s;color:var(--ink2);
+}
+.margin-chip:hover,.margin-chip.active{border-color:var(--accent);background:var(--accent-bg);color:var(--accent);font-weight:600;}
+
+/* PDF preview */
+.pdf-preview-wrap{
+  margin-top:1.25rem;background:var(--surface);
+  border:1px solid var(--border);border-radius:var(--r);
+  padding:1.25rem;box-shadow:var(--shadow);
+}
+.pdf-preview-pages{
+  display:flex;gap:10px;overflow-x:auto;padding-bottom:8px;
+  scrollbar-width:thin;
+}
+.pdf-preview-page{
+  flex-shrink:0;
+  background:var(--surface);border:1px solid var(--border);border-radius:4px;
+  box-shadow:0 2px 8px rgba(26,24,20,0.1);
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.pdf-preview-page canvas{display:block;}
+.pdf-preview-page img{display:block;max-width:100%;max-height:100%;}
+
+.pdf-dl-btn{
+  width:100%;padding:16px;border-radius:var(--r);
+  background:var(--accent);border:none;color:#fff;
+  font-size:16px;font-weight:700;font-family:var(--font);
+  cursor:pointer;margin-top:1.25rem;
+  transition:background 0.15s,transform 0.1s;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  letter-spacing:-0.3px;
+}
+.pdf-dl-btn:hover{background:var(--accent2);}
+.pdf-dl-btn:active{transform:scale(0.985);}
+.pdf-dl-btn.done{background:var(--green);}
+.pdf-dl-btn svg{width:18px;height:18px;flex-shrink:0;}
+.pdf-dl-btn:disabled{opacity:0.5;cursor:not-allowed;transform:none;}
+
+.pdf-info-bar{
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--r);padding:.9rem 1.25rem;margin-bottom:1.25rem;
+  box-shadow:var(--shadow);font-size:13px;color:var(--ink2);
+}
+.pdf-info-count{font-weight:700;color:var(--ink);}
 </style>
 </head>
 <body>
@@ -583,12 +958,23 @@ footer{
     <a href="#" onclick="showPage('home')" aria-label="PixelFit home">
       <div class="logo">Pixel<span>Fit</span></div>
     </a>
-    <div class="logo-tag">Image Resizer</div>
+    <div class="logo-tag">Image Tools</div>
   </div>
 
-  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="toggleNav()">
-    <span></span><span></span><span></span>
-  </button>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <button class="dm-toggle" id="dm-toggle" onclick="toggleDarkMode()" type="button" aria-label="Toggle dark mode">
+      <!-- Sun icon (light mode) -->
+      <svg class="dm-toggle-icon" viewBox="0 0 16 16" fill="none" id="dm-icon-sun">
+        <circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.05 3.05l1.06 1.06M11.89 11.89l1.06 1.06M3.05 12.95l1.06-1.06M11.89 4.11l1.06-1.06" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+      </svg>
+      <span class="dm-toggle-label-light">Light</span>
+      <span class="dm-toggle-label-dark">Dark</span>
+    </button>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 
   <nav id="main-nav" role="navigation" aria-label="Main navigation">
     <a class="nav-link" href="#" onclick="showPage('home')">Tool</a>
@@ -608,8 +994,8 @@ footer{
   <!-- HERO -->
   <div class="hero">
     <div class="hero-badge">✦ 100% Free &nbsp;·&nbsp; No Upload &nbsp;·&nbsp; Works Offline</div>
-    <h1>Resize <em>any photo</em><br>instantly in your browser</h1>
-    <p class="hero-sub">Change image dimensions by pixels, percentage, or social media presets. Export as JPEG, PNG, or WebP. Your images never leave your device.</p>
+    <h1>Resize images, convert photos to PDF, and <em>enhance image quality using AI</em> — all in one free online tool.</h1>
+    <p class="hero-sub">PixelFit lets you resize, compress, convert, and enhance images instantly in your browser with high-quality output and no uploads.</p>
   </div>
 
   <!-- TOP AD SLOT -->
@@ -623,7 +1009,55 @@ footer{
   <!-- ═══ TOOL ═══ -->
   <div class="content-wrap" id="tool">
 
-    <!-- DROP ZONE -->
+    <!-- TOOL SELECTOR -->
+    <div class="tool-selector" id="tool-selector" role="group" aria-label="Select a tool">
+      <div class="tool-card selected" id="tc-resize" onclick="selectTool('resize')" role="button" tabindex="0" aria-pressed="true" onkeydown="if(event.key==='Enter'||event.key===' ')selectTool('resize')">
+        <div class="tool-card-icon">
+          <svg viewBox="0 0 22 22" fill="none"><rect x="3" y="3" width="16" height="16" rx="2.5" stroke="var(--ink2)" stroke-width="1.6"/><path d="M8 3v16M14 3v16M3 8h16M3 14h16" stroke="var(--ink2)" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/></svg>
+        </div>
+        <div class="tool-card-body">
+          <div class="tool-card-title">Resize Image</div>
+          <div class="tool-card-desc">Resize images online without losing quality. Supports JPG, PNG, WebP with pixel and percentage control.</div>
+        </div>
+        <div class="tool-checkmark" aria-hidden="true">
+          <svg viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+      <div class="tool-card" id="tc-pdf" onclick="selectTool('pdf')" role="button" tabindex="0" aria-pressed="false" onkeydown="if(event.key==='Enter'||event.key===' ')selectTool('pdf')">
+        <div class="tool-card-icon">
+          <svg viewBox="0 0 22 22" fill="none"><path d="M13 2H6a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V9l-5-7z" stroke="var(--ink2)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 2v7h7" stroke="var(--ink2)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 13h6M8 16h4" stroke="var(--ink2)" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </div>
+        <div class="tool-card-body">
+          <div class="tool-card-title">Image to PDF</div>
+          <div class="tool-card-desc">Convert multiple images to a single high-quality PDF file instantly. No upload required.</div>
+        </div>
+        <div class="tool-checkmark" aria-hidden="true">
+          <svg viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+      <!-- AI ENHANCER TOOL CARD -->
+      <div class="tool-card" id="tc-enhancer" onclick="selectTool('enhancer')" role="button" tabindex="0" aria-pressed="false" onkeydown="if(event.key==='Enter'||event.key===' ')selectTool('enhancer')">
+        <div class="tool-card-icon">
+          <svg viewBox="0 0 22 22" fill="none">
+            <path d="M11 3L9 8H4l4 3-1.5 5L11 13l4.5 3L14 11l4-3h-5L11 3z" stroke="var(--ink2)" stroke-width="1.5" stroke-linejoin="round"/>
+            <circle cx="17" cy="5" r="1.5" stroke="var(--ink2)" stroke-width="1.3"/>
+            <circle cx="5" cy="17" r="1.5" stroke="var(--ink2)" stroke-width="1.3"/>
+          </svg>
+        </div>
+        <div class="tool-card-body">
+          <div class="tool-card-title">AI Image Enhancer</div>
+          <div class="tool-card-desc">Enhance image quality using AI-like sharpening, noise reduction, and clarity improvement.</div>
+        </div>
+        <span class="tool-card-badge tool-card-badge--ai">AI</span>
+        <div class="tool-checkmark" aria-hidden="true">
+          <svg viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- DROP ZONE (Resize Tool) -->
+    <div id="resize-section">
+    <div class="upload-lock" id="upload-lock-wrap">
     <div class="drop-zone" id="drop-zone" role="button" tabindex="0"
       aria-label="Drop image here or click to browse"
       onclick="document.getElementById('file-input').click()"
@@ -790,13 +1224,317 @@ footer{
       </div><!-- /tool-and-ad -->
     </div><!-- /workspace -->
 
+    </div><!-- /upload-lock -->
+    </div><!-- /resize-section -->
+
+    <!-- ═══ PDF WORKSPACE ═══ -->
+    <div id="pdf-workspace">
+
+      <!-- PDF upload zone (shown when no images yet) -->
+      <div id="pdf-drop-zone" class="pdf-upload-zone" role="button" tabindex="0"
+        aria-label="Drop images here or click to browse"
+        onclick="document.getElementById('pdf-file-input').click()"
+        onkeydown="if(event.key==='Enter'||event.key===' ')document.getElementById('pdf-file-input').click()"
+        ondragover="handlePdfDragOver(event)"
+        ondragleave="document.getElementById('pdf-drop-zone').classList.remove('drag')"
+        ondrop="handlePdfDrop(event)">
+        <div class="drop-icon" aria-hidden="true">
+          <svg viewBox="0 0 28 28" fill="none"><path d="M18 3H8a3 3 0 00-3 3v16a3 3 0 003 3h12a3 3 0 003-3V9l-5-6z" stroke="var(--ink2)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 3v6h6" stroke="var(--ink2)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 16h4M8 19h6" stroke="var(--ink2)" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </div>
+        <div class="drop-title">Drop your images here</div>
+        <div class="drop-sub">Add one or multiple images to combine into a PDF</div>
+        <button class="drop-btn" onclick="event.stopPropagation();document.getElementById('pdf-file-input').click()" type="button">Choose Images</button>
+        <div class="drop-formats">JPG &nbsp;·&nbsp; PNG &nbsp;·&nbsp; WEBP &nbsp;·&nbsp; GIF &nbsp;·&nbsp; BMP</div>
+      </div>
+      <input type="file" id="pdf-file-input" accept="image/*" multiple aria-label="Upload images for PDF" onchange="addPdfImages(this.files)" style="display:none">
+
+      <!-- PDF editor (shown after images loaded) -->
+      <div id="pdf-editor" style="display:none;">
+
+        <!-- INFO BAR -->
+        <div class="pdf-info-bar">
+          <div><span class="pdf-info-count" id="pdf-img-count">0 images</span> ready to convert</div>
+          <button class="reset-btn" onclick="resetPdf()" type="button">✕ Start over</button>
+        </div>
+
+        <!-- IMAGES GRID -->
+        <div class="card" style="margin-bottom:1.25rem;">
+          <div class="card-title">Images (drag to reorder)</div>
+          <div class="pdf-images-grid" id="pdf-images-grid">
+            <!-- thumbnails injected by JS -->
+            <div class="pdf-add-more" onclick="document.getElementById('pdf-file-input').click()" id="pdf-add-btn">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="var(--ink3)" stroke-width="2" stroke-linecap="round"/></svg>
+              Add more
+            </div>
+          </div>
+        </div>
+
+        <!-- OPTIONS -->
+        <div class="pdf-options-grid">
+          <div class="card">
+            <div class="pdf-opt-label">Page Size</div>
+            <select class="pdf-select" id="pdf-page-size" onchange="updatePdfPreview()">
+              <option value="a4">A4 (210 × 297 mm)</option>
+              <option value="fit">Fit to Image</option>
+              <option value="letter">Letter (8.5 × 11 in)</option>
+              <option value="a3">A3 (297 × 420 mm)</option>
+            </select>
+          </div>
+          <div class="card">
+            <div class="pdf-opt-label">Orientation</div>
+            <select class="pdf-select" id="pdf-orientation" onchange="updatePdfPreview()">
+              <option value="portrait">Portrait</option>
+              <option value="landscape">Landscape</option>
+            </select>
+          </div>
+          <div class="card">
+            <div class="pdf-opt-label">Margin</div>
+            <div class="margin-chips" id="margin-chips">
+              <button class="margin-chip active" onclick="setPdfMargin('none',this)" type="button">None</button>
+              <button class="margin-chip" onclick="setPdfMargin('small',this)" type="button">Small</button>
+              <button class="margin-chip" onclick="setPdfMargin('medium',this)" type="button">Medium</button>
+              <button class="margin-chip" onclick="setPdfMargin('large',this)" type="button">Large</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="pdf-opt-label">Filename</div>
+            <input class="num-input" id="pdf-filename" type="text" placeholder="converted-images" style="width:100%;font-size:13px;font-weight:400;" aria-label="PDF filename">
+          </div>
+        </div>
+
+        <!-- PDF PREVIEW -->
+        <div class="pdf-preview-wrap">
+          <div class="preview-header">
+            <div class="card-title" style="margin:0;">Preview</div>
+            <div style="font-size:12px;color:var(--ink3);font-family:var(--mono);" id="pdf-page-count-lbl"></div>
+          </div>
+          <div class="pdf-preview-pages" id="pdf-preview-pages" style="margin-top:1rem;"></div>
+        </div>
+
+        <!-- DOWNLOAD -->
+        <button class="pdf-dl-btn" id="pdf-dl-btn" onclick="downloadPdf()" type="button">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 2v10M5.5 8.5L9 12l3.5-3.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 14h14" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>
+          Download PDF
+        </button>
+
+      </div><!-- /pdf-editor -->
+    </div><!-- /pdf-workspace -->
+
+    <!-- ═══ AI ENHANCER WORKSPACE ═══ -->
+    <div id="enhancer-workspace">
+
+      <!-- Upload zone -->
+      <div id="enh-drop-zone" class="enh-drop-zone" role="button" tabindex="0"
+        aria-label="Drop image here to enhance"
+        onclick="document.getElementById('enh-file-input').click()"
+        onkeydown="if(event.key==='Enter'||event.key===' ')document.getElementById('enh-file-input').click()"
+        ondragover="handleEnhDragOver(event)"
+        ondragleave="document.getElementById('enh-drop-zone').classList.remove('drag')"
+        ondrop="handleEnhDrop(event)">
+        <div class="drop-icon" aria-hidden="true">
+          <svg viewBox="0 0 28 28" fill="none">
+            <path d="M14 4L12 9H7l4 3-1.5 5.5L14 14l4.5 3.5L17 11l4-3h-5L14 4z" stroke="var(--ink2)" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="drop-title">Drop your photo to enhance</div>
+        <div class="drop-sub">AI sharpening, noise reduction &amp; optional upscaling</div>
+        <button class="drop-btn" onclick="event.stopPropagation();document.getElementById('enh-file-input').click()" type="button">Choose Photo</button>
+        <div class="drop-formats">JPG &nbsp;·&nbsp; PNG &nbsp;·&nbsp; WEBP &nbsp;·&nbsp; BMP</div>
+      </div>
+      <input type="file" id="enh-file-input" accept="image/*" style="display:none" onchange="loadEnhImage(this.files[0])">
+
+      <!-- Enhancer editor (shown after image loaded) -->
+      <div id="enh-editor" style="display:none;">
+
+        <!-- INFO BAR -->
+        <div class="info-bar" style="margin-top:0;margin-bottom:1.25rem;">
+          <div class="info-file">
+            <img id="enh-info-thumb" class="info-thumb" src="" alt="Thumbnail">
+            <div>
+              <div class="info-name" id="enh-info-name"></div>
+              <div class="info-dims" id="enh-info-dims"></div>
+            </div>
+          </div>
+          <button class="reset-btn" onclick="resetEnhancer()" type="button">✕ Change photo</button>
+        </div>
+
+        <div class="tool-and-ad">
+          <div>
+            <div class="editor-grid">
+
+              <!-- SETTINGS CARD -->
+              <div class="card">
+                <div class="card-title" style="display:flex;align-items:center;justify-content:space-between;">
+                  <span>Enhancement Settings</span>
+                  <span class="enh-ai-badge">✦ AI</span>
+                </div>
+
+                <div style="margin-bottom:1rem;">
+                  <div style="font-size:11px;font-family:var(--mono);color:var(--ink3);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:8px;">Enhance Level</div>
+                  <div class="enh-level-row">
+                    <button class="enh-level-btn" id="enh-lvl-low" onclick="setEnhLevel('low',this)" type="button">Low</button>
+                    <button class="enh-level-btn active" id="enh-lvl-medium" onclick="setEnhLevel('medium',this)" type="button">Medium</button>
+                    <button class="enh-level-btn" id="enh-lvl-high" onclick="setEnhLevel('high',this)" type="button">High</button>
+                  </div>
+                </div>
+
+                <div style="margin-bottom:1rem;">
+                  <div style="font-size:11px;font-family:var(--mono);color:var(--ink3);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:8px;">Adjustments</div>
+                  <div class="quality-row" style="margin-bottom:8px;">
+                    <label>Sharpness</label>
+                    <input type="range" min="0" max="100" value="55" id="enh-sharpness" oninput="document.getElementById('enh-sharpness-val').textContent=this.value" style="flex:1;accent-color:var(--accent);">
+                    <span class="quality-val" id="enh-sharpness-val">55</span>
+                  </div>
+                  <div class="quality-row" style="margin-bottom:8px;">
+                    <label>Brightness</label>
+                    <input type="range" min="-50" max="50" value="5" id="enh-brightness" oninput="document.getElementById('enh-brightness-val').textContent=this.value" style="flex:1;accent-color:var(--accent);">
+                    <span class="quality-val" id="enh-brightness-val">5</span>
+                  </div>
+                  <div class="quality-row" style="margin-bottom:8px;">
+                    <label>Contrast</label>
+                    <input type="range" min="-50" max="50" value="8" id="enh-contrast" oninput="document.getElementById('enh-contrast-val').textContent=this.value" style="flex:1;accent-color:var(--accent);">
+                    <span class="quality-val" id="enh-contrast-val">8</span>
+                  </div>
+                  <div class="quality-row">
+                    <label>Saturation</label>
+                    <input type="range" min="-50" max="50" value="5" id="enh-saturation" oninput="document.getElementById('enh-saturation-val').textContent=this.value" style="flex:1;accent-color:var(--accent);">
+                    <span class="quality-val" id="enh-saturation-val">5</span>
+                  </div>
+                </div>
+
+                <!-- Upscale toggle -->
+                <div class="compress-section">
+                  <div class="card-title" style="margin-bottom:.6rem;">Upscale</div>
+                  <div class="compress-toggle-row">
+                    <button class="toggle" id="enh-upscale-toggle" onclick="toggleEnhUpscale()" type="button" aria-label="Enable upscaling"></button>
+                    <span class="compress-toggle-lbl">2× Resolution Upscale</span>
+                  </div>
+                  <div class="compress-note">Doubles output resolution for sharper prints</div>
+                </div>
+
+                <!-- Noise reduction toggle -->
+                <div class="compress-section" style="margin-top:1rem;">
+                  <div class="card-title" style="margin-bottom:.6rem;">Noise Reduction</div>
+                  <div class="compress-toggle-row">
+                    <button class="toggle on" id="enh-denoise-toggle" onclick="toggleEnhDenoise()" type="button" aria-label="Enable noise reduction"></button>
+                    <span class="compress-toggle-lbl">Smart Denoise</span>
+                  </div>
+                  <div class="compress-note">Reduces grain &amp; digital noise from low-light shots</div>
+                </div>
+
+                <button class="enh-run-btn" id="enh-run-btn" onclick="runEnhancement()" type="button">
+                  <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 2L7 6.5H2.5L6 9.5 4.5 14 9 11l4.5 3L12 9.5l3.5-3H11L9 2z" stroke="white" stroke-width="1.5" stroke-linejoin="round" fill="rgba(255,255,255,0.15)"/></svg>
+                  Enhance Image
+                </button>
+              </div>
+
+              <!-- OUTPUT CARD -->
+              <div class="card">
+                <div class="card-title">Output Format</div>
+                <div class="format-row">
+                  <button class="fmt-btn active" onclick="setEnhFmt('jpeg')" id="enh-fmt-jpeg" type="button">JPEG</button>
+                  <button class="fmt-btn" onclick="setEnhFmt('png')" id="enh-fmt-png" type="button">PNG</button>
+                  <button class="fmt-btn" onclick="setEnhFmt('webp')" id="enh-fmt-webp" type="button">WEBP</button>
+                </div>
+                <div style="margin-top:1rem;">
+                  <div class="quality-row">
+                    <label for="enh-quality-slider">Quality</label>
+                    <input type="range" min="10" max="100" value="95" id="enh-quality-slider" oninput="document.getElementById('enh-quality-val').textContent=this.value+'%'" aria-label="Output quality" style="flex:1;accent-color:var(--accent);">
+                    <span class="quality-val" id="enh-quality-val">95%</span>
+                  </div>
+                </div>
+                <div style="margin-top:1.25rem;">
+                  <div class="card-title">Filename</div>
+                  <input class="num-input" id="enh-filename" type="text" placeholder="enhanced-photo" aria-label="Output filename">
+                </div>
+
+                <!-- Progress section (hidden until processing) -->
+                <div id="enh-progress-section" style="display:none;margin-top:1.25rem;">
+                  <div class="enh-progress-wrap">
+                    <div class="enh-progress-bar"><div class="enh-progress-fill" id="enh-progress-fill"></div></div>
+                    <div class="enh-progress-label" id="enh-progress-label">Initialising…</div>
+                  </div>
+                </div>
+
+                <!-- Result stats (hidden until done) -->
+                <div id="enh-stats" style="display:none;margin-top:1.25rem;">
+                  <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+                    <div class="stat-chip">
+                      <div class="stat-val" id="enh-stat-orig">—</div>
+                      <div class="stat-lbl">ORIGINAL</div>
+                    </div>
+                    <div class="stat-arr">→</div>
+                    <div class="stat-chip changed">
+                      <div class="stat-val" id="enh-stat-new">—</div>
+                      <div class="stat-lbl">ENHANCED</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- COMPARISON PREVIEW (full width) -->
+              <div class="preview-wrap" id="enh-preview-wrap">
+                <div class="preview-header">
+                  <div class="card-title" style="margin:0;">Before / After Comparison</div>
+                  <div style="font-size:12px;color:var(--ink3);font-family:var(--mono);">← Drag divider to compare →</div>
+                </div>
+                <!-- Shows original until enhanced -->
+                <div id="enh-before-only" style="text-align:center;padding:0.5rem 0;">
+                  <img id="enh-before-img" src="" alt="Original image" style="max-height:380px;border-radius:var(--r-sm);border:1px solid var(--border);display:block;margin:0 auto;">
+                  <div style="margin-top:10px;font-size:12px;color:var(--ink3);font-family:var(--mono);">Original — click Enhance Image to process</div>
+                </div>
+                <!-- Comparison slider (shown after enhancement) -->
+                <div id="enh-compare-section" style="display:none;">
+                  <div class="enh-compare-wrap" id="enh-compare-wrap">
+                    <img id="enh-orig-canvas-img" src="" alt="Original" style="display:block;width:100%;max-height:420px;object-fit:contain;">
+                    <div class="enh-compare-after" id="enh-compare-after" style="clip-path:inset(0 50% 0 0);">
+                      <img id="enh-result-img" src="" alt="Enhanced" style="width:100%;height:100%;object-fit:contain;">
+                    </div>
+                    <div class="enh-label enh-label-before">Before</div>
+                    <div class="enh-label enh-label-after">After</div>
+                    <div class="enh-divider" id="enh-divider" style="left:50%;">
+                      <div class="enh-divider-handle">
+                        <svg viewBox="0 0 18 18" fill="none"><path d="M6 4l-3 5 3 5M12 4l3 5-3 5" stroke="var(--ink2)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <button class="enh-dl-btn" id="enh-dl-btn" onclick="downloadEnhanced()" type="button" disabled>
+                  <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 2v10M5.5 8.5L9 12l3.5-3.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 14h14" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>
+                  Download Enhanced Image
+                </button>
+              </div>
+
+            </div><!-- /editor-grid -->
+          </div>
+          <!-- SIDE AD SLOT (desktop) -->
+          <div>
+            <div class="ad-slot ad-slot-rect" style="position:sticky;top:calc(var(--nav-h) + 16px);" aria-hidden="true">
+              <!-- 300×250 Rectangle Ad -->
+            </div>
+          </div>
+        </div><!-- /tool-and-ad -->
+
+      </div><!-- /enh-editor -->
+    </div><!-- /enhancer-workspace -->
+
   </div><!-- /content-wrap -->
+
+  <!-- ═══════════════════════ ALL IN ONE SEO SECTION ═══════════════════════ -->
+  <section aria-labelledby="all-in-one-title">
+    <div class="section" style="padding-top:1.5rem; padding-bottom:1.5rem;">
+      <div class="section-label">All-in-One Image Tools</div>
+      <h2 class="section-title" id="all-in-one-title">Complete suite for your image editing needs</h2>
+      <p class="section-sub" style="max-width:100%;">PixelFit is a complete online image tool that allows you to resize images, convert images to PDF, and enhance photos using advanced AI technology. It works directly in your browser, ensuring privacy and fast performance without the need to install any software or register for an account.</p>
+    </div>
+  </section>
 
   <!-- ═══════════════════════ FEATURES ═══════════════════════ -->
   <section id="features" aria-labelledby="features-title">
     <div class="section">
       <div class="section-label">Why PixelFit</div>
-      <h2 class="section-title" id="features-title">Everything you need to resize images</h2>
+      <h2 class="section-title" id="features-title">Everything you need to edit images</h2>
       <p class="section-sub">No sign-up. No file size limits. No ads tracking your images. Just a fast, powerful photo resizer that respects your privacy.</p>
 
       <div class="features-grid">
@@ -961,39 +1699,33 @@ footer{
 
       <div class="faq-list" itemscope itemtype="https://schema.org/FAQPage">
         <details class="faq" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <summary itemprop="name">Is PixelFit really free to use?</summary>
+          <summary itemprop="name">How to resize image online?</summary>
           <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Yes — completely free. There are no plans, no subscriptions, and no hidden fees. PixelFit is supported by non-intrusive advertisements.</p>
+            <p itemprop="text">Simply select the "Resize Image" tool, drop your photo into the workspace, set your desired width and height (in pixels or percentage), choose your output format (JPEG, PNG, or WebP), and click Download. It's fast and processes entirely on your device.</p>
+          </div>
+        </details>
+        <details class="faq" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary itemprop="name">How to convert image to PDF?</summary>
+          <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Choose the "Image to PDF" tool, upload one or multiple images, drag them to arrange the correct order, select your preferred page size (like A4 or Letter) and margin, and then download your high-quality PDF document instantly.</p>
+          </div>
+        </details>
+        <details class="faq" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary itemprop="name">How to enhance image quality?</summary>
+          <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Select the "AI Image Enhancer" tool, upload a blurry or low-quality photo, and adjust the enhancement level. You can use features like Smart Denoise, 2× Upscaling, and sharpness controls to improve clarity before downloading the enhanced image.</p>
+          </div>
+        </details>
+        <details class="faq" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary itemprop="name">Is PixelFit free?</summary>
+          <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Yes — completely free. There are no plans, no subscriptions, and no hidden fees. PixelFit is a free online tool to resize images, convert photos to PDF, and enhance image quality, supported by non-intrusive advertisements.</p>
           </div>
         </details>
         <details class="faq" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
           <summary itemprop="name">Are my images uploaded to a server?</summary>
           <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">No. PixelFit uses your browser's built-in Canvas API to process images entirely on your device. Your photos never leave your computer — not even for a split second.</p>
-          </div>
-        </details>
-        <details class="faq" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <summary itemprop="name">What is the maximum image size I can resize?</summary>
-          <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">There's no enforced file-size limit — performance depends on your browser and device memory. Most modern devices handle images up to 50 MB without any issues.</p>
-          </div>
-        </details>
-        <details class="faq" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <summary itemprop="name">Will resizing reduce image quality?</summary>
-          <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Enlarging an image beyond its original resolution will reduce sharpness — that's a fundamental limitation of digital photography. Shrinking, however, preserves quality well, especially with JPEG quality set to 85% or higher.</p>
-          </div>
-        </details>
-        <details class="faq" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <summary itemprop="name">Which format should I use — JPEG, PNG, or WebP?</summary>
-          <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Use JPEG for photos and social media (small file, wide compatibility). Use PNG when you need a transparent background or pixel-perfect quality for logos. Use WebP for modern websites — it offers the best compression with transparency support.</p>
-          </div>
-        </details>
-        <details class="faq" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <summary itemprop="name">Can I resize images on mobile?</summary>
-          <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Absolutely. PixelFit is fully responsive and works on iOS and Android browsers. Just tap "Choose Photo" to access your camera roll.</p>
+            <p itemprop="text">No. PixelFit processes all images locally in your browser. Your photos never leave your computer — not even for a split second.</p>
           </div>
         </details>
       </div>
@@ -1479,6 +2211,717 @@ document.addEventListener('paste',e=>{
     if(item.type.startsWith('image/')){loadImage(item.getAsFile());break;}
   }
 });
+
+/* ═══════════════════════════════════════════════════
+   TOOL SELECTOR
+═══════════════════════════════════════════════════ */
+let activeTool = 'resize'; // 'resize' | 'pdf' | 'enhancer'
+
+function selectTool(tool) {
+  activeTool = tool;
+  // Update card states
+  ['resize','pdf','enhancer'].forEach(t => {
+    const card = document.getElementById('tc-'+t);
+    if (!card) return;
+    const pressed = t === tool;
+    card.classList.toggle('selected', pressed);
+    card.setAttribute('aria-pressed', String(pressed));
+  });
+  // Show/hide sections with animation
+  const resizeSec = document.getElementById('resize-section');
+  const pdfSec = document.getElementById('pdf-workspace');
+  const enhSec = document.getElementById('enhancer-workspace');
+  resizeSec.style.display = 'none';
+  pdfSec.classList.remove('on'); pdfSec.style.display = 'none';
+  enhSec.classList.remove('on'); enhSec.style.display = 'none';
+  if (tool === 'resize') {
+    resizeSec.style.display = 'block';
+  } else if (tool === 'pdf') {
+    pdfSec.style.display = 'block';
+    requestAnimationFrame(() => pdfSec.classList.add('on'));
+  } else if (tool === 'enhancer') {
+    enhSec.style.display = 'block';
+    requestAnimationFrame(() => enhSec.classList.add('on'));
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   IMAGE → PDF  (pure canvas + manual PDF writer)
+═══════════════════════════════════════════════════ */
+let pdfImages = []; // {file, url, img, w, h}
+let pdfMargin = 'none'; // none | small | medium | large
+
+const PDF_PAGE_SIZES = {
+  a4:      { w: 595.28, h: 841.89 },
+  letter:  { w: 612,    h: 792    },
+  a3:      { w: 841.89, h: 1190.55},
+  fit:     null // dynamic per image
+};
+const PDF_MARGINS = { none: 0, small: 14.17, medium: 28.35, large: 56.69 };
+
+function handlePdfDragOver(e) {
+  e.preventDefault();
+  document.getElementById('pdf-drop-zone').classList.add('drag');
+}
+function handlePdfDrop(e) {
+  e.preventDefault();
+  document.getElementById('pdf-drop-zone').classList.remove('drag');
+  const files = Array.from(e.dataTransfer.files).filter(f => f.type.startsWith('image/'));
+  if (files.length) addPdfImages(files);
+}
+
+function addPdfImages(fileList) {
+  const files = Array.from(fileList);
+  let loaded = 0;
+  files.forEach(file => {
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => {
+      pdfImages.push({ file, url, img, w: img.naturalWidth, h: img.naturalHeight });
+      loaded++;
+      if (loaded === files.length) {
+        renderPdfThumbs();
+        showPdfEditor();
+        updatePdfPreview();
+      }
+    };
+    img.src = url;
+  });
+  // reset file input so same file can be re-added
+  document.getElementById('pdf-file-input').value = '';
+}
+
+function showPdfEditor() {
+  document.getElementById('pdf-drop-zone').style.display = 'none';
+  document.getElementById('pdf-editor').style.display = 'block';
+}
+
+function renderPdfThumbs() {
+  const grid = document.getElementById('pdf-images-grid');
+  // Remove existing thumbs (keep add-btn)
+  Array.from(grid.querySelectorAll('.pdf-img-thumb')).forEach(el => el.remove());
+  const addBtn = document.getElementById('pdf-add-btn');
+  pdfImages.forEach((item, i) => {
+    const thumb = document.createElement('div');
+    thumb.className = 'pdf-img-thumb';
+    thumb.draggable = true;
+    thumb.dataset.index = i;
+    thumb.innerHTML = `
+      <img src="${item.url}" alt="Page ${i+1}">
+      <span class="pdf-thumb-num">${i+1}</span>
+      <button class="pdf-thumb-remove" onclick="removePdfImage(${i})" title="Remove" type="button">
+        <svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>`;
+    thumb.addEventListener('dragstart', e => { e.dataTransfer.setData('text/plain', i); });
+    thumb.addEventListener('dragover', e => { e.preventDefault(); thumb.style.opacity='0.5'; });
+    thumb.addEventListener('dragleave', () => { thumb.style.opacity=''; });
+    thumb.addEventListener('drop', e => {
+      e.preventDefault(); thumb.style.opacity='';
+      const from = parseInt(e.dataTransfer.getData('text/plain'));
+      const to = i;
+      if (from !== to) {
+        const moved = pdfImages.splice(from, 1)[0];
+        pdfImages.splice(to, 0, moved);
+        renderPdfThumbs();
+        updatePdfPreview();
+      }
+    });
+    grid.insertBefore(thumb, addBtn);
+  });
+  document.getElementById('pdf-img-count').textContent = pdfImages.length + (pdfImages.length === 1 ? ' image' : ' images');
+}
+
+function removePdfImage(i) {
+  URL.revokeObjectURL(pdfImages[i].url);
+  pdfImages.splice(i, 1);
+  if (pdfImages.length === 0) { resetPdf(); return; }
+  renderPdfThumbs();
+  updatePdfPreview();
+}
+
+function setPdfMargin(val, btn) {
+  pdfMargin = val;
+  document.querySelectorAll('.margin-chip').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  updatePdfPreview();
+}
+
+function resetPdf() {
+  pdfImages.forEach(item => URL.revokeObjectURL(item.url));
+  pdfImages = [];
+  document.getElementById('pdf-drop-zone').style.display = '';
+  document.getElementById('pdf-editor').style.display = 'none';
+  document.getElementById('pdf-preview-pages').innerHTML = '';
+}
+
+function getPdfPageDims(imgW, imgH) {
+  const sizeKey = document.getElementById('pdf-page-size').value;
+  const orient  = document.getElementById('pdf-orientation').value;
+  let pw, ph;
+  if (sizeKey === 'fit') {
+    pw = imgW; ph = imgH;
+    if (orient === 'landscape' && pw < ph) { [pw, ph] = [ph, pw]; }
+    if (orient === 'portrait'  && pw > ph) { [pw, ph] = [ph, pw]; }
+    return { pw, ph };
+  }
+  const base = PDF_PAGE_SIZES[sizeKey];
+  pw = base.w; ph = base.h;
+  if (orient === 'landscape') { [pw, ph] = [ph, pw]; }
+  return { pw, ph };
+}
+
+function updatePdfPreview() {
+  if (!pdfImages.length) return;
+  const container = document.getElementById('pdf-preview-pages');
+  container.innerHTML = '';
+  const margin = PDF_MARGINS[pdfMargin];
+  const SCALE = 0.25; // preview scale
+
+  pdfImages.forEach((item, i) => {
+    const { pw, ph } = getPdfPageDims(item.w, item.h);
+    const drawW = pw - margin * 2;
+    const drawH = ph - margin * 2;
+    // Scale image to fit draw area
+    const ratio = Math.min(drawW / item.w, drawH / item.h);
+    const iw = item.w * ratio, ih = item.h * ratio;
+    const ox = margin + (drawW - iw) / 2;
+    const oy = margin + (drawH - ih) / 2;
+
+    const canvas = document.createElement('canvas');
+    canvas.width  = Math.round(pw  * SCALE);
+    canvas.height = Math.round(ph  * SCALE);
+    canvas.style.display = 'block';
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(item.img, ox * SCALE, oy * SCALE, iw * SCALE, ih * SCALE);
+
+    const pageWrap = document.createElement('div');
+    pageWrap.className = 'pdf-preview-page';
+    pageWrap.style.width  = canvas.width  + 'px';
+    pageWrap.style.height = canvas.height + 'px';
+    pageWrap.appendChild(canvas);
+    container.appendChild(pageWrap);
+  });
+
+  document.getElementById('pdf-page-count-lbl').textContent = pdfImages.length + ' page' + (pdfImages.length !== 1 ? 's' : '');
+}
+
+/* ── Minimal pure-JS PDF builder (no external lib, lossless quality) ── */
+async function downloadPdf() {
+  if (!pdfImages.length) return;
+  const btn = document.getElementById('pdf-dl-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<div class="spinner" style="width:20px;height:20px;border-width:2px;border-color:rgba(255,255,255,0.35);border-top-color:#fff;"></div> Converting…';
+  showLoadingPdf(true);
+
+  try {
+    await new Promise(r => setTimeout(r, 30)); // allow UI paint
+    const margin = PDF_MARGINS[pdfMargin];
+    const pdfBytes = await buildPdf(pdfImages, margin);
+    const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = (document.getElementById('pdf-filename').value.trim() || 'converted-images') + '.pdf';
+    document.body.appendChild(a); a.click();
+    setTimeout(() => { URL.revokeObjectURL(url); document.body.removeChild(a); }, 500);
+    showToast('PDF downloaded!', 'ok');
+    btn.classList.add('done');
+    btn.innerHTML = '✓ Downloaded!';
+    setTimeout(() => {
+      btn.classList.remove('done'); btn.disabled = false;
+      btn.innerHTML = '<svg viewBox="0 0 18 18" fill="none"><path d="M9 2v10M5.5 8.5L9 12l3.5-3.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 14h14" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg> Download PDF';
+    }, 2500);
+  } catch(err) {
+    showToast('Conversion failed — try again', 'err');
+    btn.disabled = false;
+    btn.innerHTML = '<svg viewBox="0 0 18 18" fill="none"><path d="M9 2v10M5.5 8.5L9 12l3.5-3.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 14h14" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg> Download PDF';
+  }
+  showLoadingPdf(false);
+}
+
+function showLoadingPdf(on) {
+  const el = document.getElementById('loading-overlay');
+  el.querySelector('.loading-label').textContent = on ? 'Building PDF…' : 'Processing image…';
+  el.classList.toggle('on', on);
+}
+
+async function buildPdf(images, margin) {
+  // We build a proper PDF manually using JPEG image XObjects
+  const pages = [];
+  const imgStreams = [];
+
+  for (let i = 0; i < images.length; i++) {
+    const item = images[i];
+    const { pw, ph } = getPdfPageDims(item.w, item.h);
+    const drawW = pw - margin * 2;
+    const drawH = ph - margin * 2;
+    const ratio = Math.min(drawW / item.w, drawH / item.h);
+    const iw = item.w * ratio;
+    const ih = item.h * ratio;
+    const ox = margin + (drawW - iw) / 2;
+    const oy = margin + (drawH - ih) / 2;
+
+    // Render image to canvas at original resolution for quality
+    const canvas = document.createElement('canvas');
+    canvas.width  = Math.round(iw);
+    canvas.height = Math.round(ih);
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(item.img, 0, 0, canvas.width, canvas.height);
+
+    // Get JPEG bytes at 97% quality (effectively lossless)
+    const jpegDataUrl = canvas.toDataURL('image/jpeg', 0.97);
+    const jpegB64 = jpegDataUrl.split(',')[1];
+    const jpegBytes = b64ToUint8(jpegB64);
+
+    imgStreams.push({
+      bytes: jpegBytes,
+      pw, ph,
+      iw: canvas.width, ih: canvas.height,
+      ox, oy: ph - oy - ih  // PDF y is bottom-up
+    });
+    pages.push({ pw, ph, idx: i });
+  }
+
+  return assemblePdf(pages, imgStreams);
+}
+
+function b64ToUint8(b64) {
+  const bin = atob(b64);
+  const bytes = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  return bytes;
+}
+
+function str2bytes(s) {
+  const enc = new TextEncoder();
+  return enc.encode(s);
+}
+
+function assemblePdf(pages, imgStreams) {
+  // PDF structure:
+  // %PDF-1.4
+  // obj 1: Catalog  -> Pages (obj 2)
+  // obj 2: Pages
+  // For each page i:  obj 3+3i: Page, obj 4+3i: XObject Image, obj 5+3i: (content stream)
+  // xref + trailer
+
+  const chunks = [];
+  const offsets = [];
+  let pos = 0;
+
+  function write(s) {
+    const b = (typeof s === 'string') ? str2bytes(s) : s;
+    chunks.push(b);
+    pos += b.byteLength;
+  }
+
+  write('%PDF-1.4\n%\xE2\xE3\xCF\xD3\n');
+
+  const n = pages.length;
+  // Object numbering: 1=Catalog, 2=Pages, then per page: 3+3i=Page, 4+3i=ImgObj, 5+3i=Content
+  const catalogObjNum = 1;
+  const pagesObjNum   = 2;
+  const firstPageObj  = 3; // Page for page 0 = obj 3, img=4, content=5
+
+  // Write catalog
+  offsets[catalogObjNum] = pos;
+  write(`${catalogObjNum} 0 obj\n<< /Type /Catalog /Pages ${pagesObjNum} 0 R >>\nendobj\n`);
+
+  // Write Pages (placeholder — will be correct since we know all page obj nums)
+  const pageObjNums = pages.map((_, i) => firstPageObj + i * 3);
+  offsets[pagesObjNum] = pos;
+  write(`${pagesObjNum} 0 obj\n<< /Type /Pages /Kids [${pageObjNums.map(n=>n+' 0 R').join(' ')}] /Count ${n} >>\nendobj\n`);
+
+  // Write each page
+  for (let i = 0; i < n; i++) {
+    const { pw, ph } = imgStreams[i];
+    const pageNum    = firstPageObj + i * 3;
+    const imgNum     = pageNum + 1;
+    const contentNum = pageNum + 2;
+    const { iw, ih, ox, oy: oyPdf } = imgStreams[i];
+
+    // Content stream: place image
+    const contentStr = `q ${iw} 0 0 ${ih} ${ox.toFixed(2)} ${oyPdf.toFixed(2)} cm /Im${i} Do Q\n`;
+    const contentBytes = str2bytes(contentStr);
+
+    // Page object
+    offsets[pageNum] = pos;
+    write(`${pageNum} 0 obj\n<< /Type /Page /Parent ${pagesObjNum} 0 R /MediaBox [0 0 ${pw.toFixed(2)} ${ph.toFixed(2)}] /Resources << /XObject << /Im${i} ${imgNum} 0 R >> >> /Contents ${contentNum} 0 R >>\nendobj\n`);
+
+    // Image XObject
+    const imgBytes = imgStreams[i].bytes;
+    offsets[imgNum] = pos;
+    write(`${imgNum} 0 obj\n<< /Type /XObject /Subtype /Image /Width ${iw} /Height ${ih} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${imgBytes.byteLength} >>\nstream\n`);
+    write(imgBytes);
+    write(`\nendstream\nendobj\n`);
+
+    // Content stream object
+    offsets[contentNum] = pos;
+    write(`${contentNum} 0 obj\n<< /Length ${contentBytes.byteLength} >>\nstream\n`);
+    write(contentBytes);
+    write(`\nendstream\nendobj\n`);
+  }
+
+  // xref table
+  const xrefPos = pos;
+  const totalObjs = 2 + n * 3 + 1; // 1(free) + catalog + pages + 3*n
+  write(`xref\n0 ${totalObjs}\n`);
+  write(`0000000000 65535 f \n`); // free object 0
+  for (let o = 1; o < totalObjs; o++) {
+    write(String(offsets[o]).padStart(10,'0') + ' 00000 n \n');
+  }
+  write(`trailer\n<< /Size ${totalObjs} /Root ${catalogObjNum} 0 R >>\n`);
+  write(`startxref\n${xrefPos}\n%%EOF\n`);
+
+  // Concatenate all chunks
+  const total = chunks.reduce((s, c) => s + c.byteLength, 0);
+  const out = new Uint8Array(total);
+  let off = 0;
+  for (const c of chunks) { out.set(c, off); off += c.byteLength; }
+  return out;
+}
+
+/* ═══════════════════════════════════════════════════
+   EXISTING RESIZE TOOL HELPERS (unchanged below)
+═══════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════
+   DARK MODE
+═══════════════════════════════════════════════════ */
+function toggleDarkMode() {
+  const isDark = document.documentElement.classList.toggle('dark');
+  localStorage.setItem('pixelfit-dark', isDark ? '1' : '0');
+}
+// Restore preference on load
+(function() {
+  if (localStorage.getItem('pixelfit-dark') === '1') {
+    document.documentElement.classList.add('dark');
+  }
+})();
+
+/* ═══════════════════════════════════════════════════
+   AI IMAGE ENHANCER
+═══════════════════════════════════════════════════ */
+let enhOrigImg = null, enhOrigName = '', enhResultDataUrl = null;
+let enhLevel = 'medium';
+let enhUpscale = false, enhDenoise = true;
+let enhFmt = 'jpeg';
+
+function loadEnhImage(file) {
+  if (!file) return;
+  if (!file.type.startsWith('image/')) { showToast('Please select an image file', 'err'); return; }
+  showLoading(true);
+  enhOrigName = file.name.replace(/\.[^.]+$/, '');
+  document.getElementById('enh-filename').value = enhOrigName + '-enhanced';
+  const url = URL.createObjectURL(file);
+  const img = new Image();
+  img.onload = () => {
+    enhOrigImg = img;
+    document.getElementById('enh-info-name').textContent = file.name;
+    document.getElementById('enh-info-dims').textContent = img.naturalWidth + ' × ' + img.naturalHeight + ' px  ·  ' + fmtSize(file.size);
+    document.getElementById('enh-info-thumb').src = url;
+    document.getElementById('enh-before-img').src = url;
+    document.getElementById('enh-stat-orig').textContent = img.naturalWidth + '×' + img.naturalHeight;
+    document.getElementById('enh-drop-zone').style.display = 'none';
+    document.getElementById('enh-editor').style.display = 'block';
+    enhResultDataUrl = null;
+    document.getElementById('enh-dl-btn').disabled = true;
+    document.getElementById('enh-compare-section').style.display = 'none';
+    document.getElementById('enh-before-only').style.display = 'block';
+    document.getElementById('enh-stats').style.display = 'none';
+    showLoading(false);
+    showToast('Image loaded — ' + img.naturalWidth + '×' + img.naturalHeight, 'ok');
+  };
+  img.onerror = () => { showLoading(false); showToast('Failed to load image', 'err'); };
+  img.src = url;
+  document.getElementById('enh-file-input').value = '';
+}
+
+function handleEnhDragOver(e) {
+  e.preventDefault();
+  document.getElementById('enh-drop-zone').classList.add('drag');
+}
+function handleEnhDrop(e) {
+  e.preventDefault();
+  document.getElementById('enh-drop-zone').classList.remove('drag');
+  const f = e.dataTransfer.files[0];
+  if (f && f.type.startsWith('image/')) loadEnhImage(f);
+  else showToast('Please drop an image file', 'err');
+}
+
+function setEnhLevel(level, btn) {
+  enhLevel = level;
+  ['low','medium','high'].forEach(l => {
+    document.getElementById('enh-lvl-'+l).classList.toggle('active', l === level);
+  });
+  // Auto-adjust sliders to preset values
+  const presets = {
+    low:    { sharpness: 25, brightness: 2,  contrast: 3,  saturation: 2  },
+    medium: { sharpness: 55, brightness: 5,  contrast: 8,  saturation: 5  },
+    high:   { sharpness: 85, brightness: 10, contrast: 18, saturation: 12 }
+  };
+  const p = presets[level];
+  document.getElementById('enh-sharpness').value = p.sharpness;
+  document.getElementById('enh-brightness').value = p.brightness;
+  document.getElementById('enh-contrast').value = p.contrast;
+  document.getElementById('enh-saturation').value = p.saturation;
+  document.getElementById('enh-sharpness-val').textContent = p.sharpness;
+  document.getElementById('enh-brightness-val').textContent = p.brightness;
+  document.getElementById('enh-contrast-val').textContent = p.contrast;
+  document.getElementById('enh-saturation-val').textContent = p.saturation;
+}
+
+function setEnhFmt(f) {
+  enhFmt = f;
+  ['jpeg','png','webp'].forEach(x => document.getElementById('enh-fmt-'+x).classList.toggle('active', x === f));
+}
+
+function toggleEnhUpscale() {
+  enhUpscale = !enhUpscale;
+  document.getElementById('enh-upscale-toggle').classList.toggle('on', enhUpscale);
+}
+function toggleEnhDenoise() {
+  enhDenoise = !enhDenoise;
+  document.getElementById('enh-denoise-toggle').classList.toggle('on', enhDenoise);
+}
+
+function resetEnhancer() {
+  enhOrigImg = null; enhResultDataUrl = null;
+  document.getElementById('enh-drop-zone').style.display = '';
+  document.getElementById('enh-editor').style.display = 'none';
+  document.getElementById('enh-compare-section').style.display = 'none';
+  document.getElementById('enh-before-only').style.display = 'block';
+  document.getElementById('enh-stats').style.display = 'none';
+  document.getElementById('enh-dl-btn').disabled = true;
+  document.getElementById('enh-progress-section').style.display = 'none';
+}
+
+/* ── CANVAS-BASED IMAGE ENHANCEMENT ── */
+async function runEnhancement() {
+  if (!enhOrigImg) return;
+  const btn = document.getElementById('enh-run-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<div class="spinner" style="width:18px;height:18px;border-width:2px;border-color:rgba(255,255,255,0.3);border-top-color:#fff;"></div> Processing…';
+
+  const progSec = document.getElementById('enh-progress-section');
+  const progFill = document.getElementById('enh-progress-fill');
+  const progLabel = document.getElementById('enh-progress-label');
+  progSec.style.display = 'block';
+
+  const setProgress = (pct, label) => {
+    progFill.style.width = pct + '%';
+    progLabel.textContent = label;
+  };
+
+  try {
+    setProgress(10, 'Loading image…');
+    await tick();
+
+    const sharpness  = parseInt(document.getElementById('enh-sharpness').value) / 100;
+    const brightness = parseInt(document.getElementById('enh-brightness').value);
+    const contrast   = parseInt(document.getElementById('enh-contrast').value);
+    const saturation = parseInt(document.getElementById('enh-saturation').value);
+    const scale = enhUpscale ? 2 : 1;
+
+    const srcW = enhOrigImg.naturalWidth;
+    const srcH = enhOrigImg.naturalHeight;
+    const outW = srcW * scale;
+    const outH = srcH * scale;
+
+    setProgress(20, 'Scaling image…');
+    await tick();
+
+    // Step 1: draw at output resolution
+    const canvas = document.createElement('canvas');
+    canvas.width = outW; canvas.height = outH;
+    const ctx = canvas.getContext('2d');
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
+    ctx.drawImage(enhOrigImg, 0, 0, outW, outH);
+
+    setProgress(35, 'Applying brightness & contrast…');
+    await tick();
+
+    // Step 2: pixel-level brightness, contrast, saturation
+    let imageData = ctx.getImageData(0, 0, outW, outH);
+    let data = imageData.data;
+
+    const contrastFactor = (259 * (contrast + 255)) / (255 * (259 - contrast));
+    const brightnessOffset = brightness * 2.55;
+    const saturationFactor = 1 + saturation / 100;
+
+    for (let i = 0; i < data.length; i += 4) {
+      let r = data[i], g = data[i+1], b = data[i+2];
+
+      // Brightness
+      r += brightnessOffset; g += brightnessOffset; b += brightnessOffset;
+
+      // Contrast
+      r = contrastFactor * (r - 128) + 128;
+      g = contrastFactor * (g - 128) + 128;
+      b = contrastFactor * (b - 128) + 128;
+
+      // Saturation (convert to grayscale luminance then lerp)
+      const lum = 0.299 * r + 0.587 * g + 0.114 * b;
+      r = lum + saturationFactor * (r - lum);
+      g = lum + saturationFactor * (g - lum);
+      b = lum + saturationFactor * (b - lum);
+
+      data[i]   = Math.max(0, Math.min(255, r));
+      data[i+1] = Math.max(0, Math.min(255, g));
+      data[i+2] = Math.max(0, Math.min(255, b));
+    }
+    ctx.putImageData(imageData, 0, 0);
+
+    setProgress(55, 'Reducing noise…');
+    await tick();
+
+    // Step 3: Denoise (box blur on a separate canvas, then blend)
+    if (enhDenoise) {
+      const blurRadius = enhLevel === 'low' ? 0.4 : enhLevel === 'medium' ? 0.7 : 1.0;
+      await applyDenoiseBlend(ctx, canvas, outW, outH, blurRadius);
+    }
+
+    setProgress(72, 'Sharpening…');
+    await tick();
+
+    // Step 4: Unsharp mask (sharpening)
+    if (sharpness > 0) {
+      await applyUnsharpMask(ctx, canvas, outW, outH, sharpness);
+    }
+
+    setProgress(90, 'Finalising…');
+    await tick();
+
+    // Export
+    const quality = parseInt(document.getElementById('enh-quality-slider').value) / 100;
+    const mimeMap = { jpeg: 'image/jpeg', png: 'image/png', webp: 'image/webp' };
+    const dataUrl = canvas.toDataURL(mimeMap[enhFmt], enhFmt === 'png' ? undefined : quality);
+    enhResultDataUrl = dataUrl;
+
+    // Show comparison
+    document.getElementById('enh-orig-canvas-img').src = enhOrigImg.src;
+    document.getElementById('enh-result-img').src = dataUrl;
+    document.getElementById('enh-before-only').style.display = 'none';
+    document.getElementById('enh-compare-section').style.display = 'block';
+
+    // Stats
+    const bytes = Math.round((dataUrl.length - dataUrl.indexOf(',') - 1) * 0.75);
+    document.getElementById('enh-stat-new').textContent = outW + '×' + outH + ' · ~' + fmtSize(bytes);
+    document.getElementById('enh-stats').style.display = 'block';
+
+    document.getElementById('enh-dl-btn').disabled = false;
+    initEnhCompare();
+
+    setProgress(100, 'Done!');
+    showToast('Enhancement complete!', 'ok');
+    setTimeout(() => { progSec.style.display = 'none'; }, 1500);
+
+  } catch(err) {
+    showToast('Enhancement failed — try again', 'err');
+    console.error(err);
+  }
+
+  btn.disabled = false;
+  btn.innerHTML = '<svg viewBox="0 0 18 18" fill="none"><path d="M9 2L7 6.5H2.5L6 9.5 4.5 14 9 11l4.5 3L12 9.5l3.5-3H11L9 2z" stroke="white" stroke-width="1.5" stroke-linejoin="round" fill="rgba(255,255,255,0.15)"/></svg> Re-Enhance';
+}
+
+function tick() { return new Promise(r => setTimeout(r, 16)); }
+
+async function applyDenoiseBlend(ctx, canvas, w, h, strength) {
+  // Gentle box blur on temp canvas then blend
+  const tmp = document.createElement('canvas');
+  tmp.width = w; tmp.height = h;
+  const tctx = tmp.getContext('2d');
+  tctx.filter = `blur(${strength}px)`;
+  tctx.drawImage(canvas, 0, 0);
+  tctx.filter = 'none';
+
+  const blurData = tctx.getImageData(0, 0, w, h);
+  const origData = ctx.getImageData(0, 0, w, h);
+  const alpha = 0.35; // blend amount — keep mostly original
+  for (let i = 0; i < origData.data.length; i += 4) {
+    origData.data[i]   = Math.round(origData.data[i]   * (1-alpha) + blurData.data[i]   * alpha);
+    origData.data[i+1] = Math.round(origData.data[i+1] * (1-alpha) + blurData.data[i+1] * alpha);
+    origData.data[i+2] = Math.round(origData.data[i+2] * (1-alpha) + blurData.data[i+2] * alpha);
+  }
+  ctx.putImageData(origData, 0, 0);
+}
+
+async function applyUnsharpMask(ctx, canvas, w, h, sharpAmt) {
+  // Classic unsharp mask: blend original with (original - blur)
+  const blurRadius = 1.2;
+  const tmp = document.createElement('canvas');
+  tmp.width = w; tmp.height = h;
+  const tctx = tmp.getContext('2d');
+  tctx.filter = `blur(${blurRadius}px)`;
+  tctx.drawImage(canvas, 0, 0);
+  tctx.filter = 'none';
+
+  const blurData = tctx.getImageData(0, 0, w, h);
+  const origData = ctx.getImageData(0, 0, w, h);
+  const amount = sharpAmt * 1.8; // scale sharpen amount
+
+  for (let i = 0; i < origData.data.length; i += 4) {
+    for (let c = 0; c < 3; c++) {
+      const diff = origData.data[i+c] - blurData.data[i+c];
+      origData.data[i+c] = Math.max(0, Math.min(255, origData.data[i+c] + diff * amount));
+    }
+  }
+  ctx.putImageData(origData, 0, 0);
+}
+
+/* ── COMPARE DRAG SLIDER ── */
+function initEnhCompare() {
+  const wrap = document.getElementById('enh-compare-wrap');
+  const divider = document.getElementById('enh-divider');
+  const after = document.getElementById('enh-compare-after');
+  let dragging = false;
+
+  function setPos(clientX) {
+    const rect = wrap.getBoundingClientRect();
+    let pct = (clientX - rect.left) / rect.width;
+    pct = Math.max(0.02, Math.min(0.98, pct));
+    const pctPx = (pct * 100).toFixed(2) + '%';
+    divider.style.left = pctPx;
+    after.style.clipPath = `inset(0 ${(100 - pct * 100).toFixed(2)}% 0 0)`;
+  }
+
+  // Mouse events
+  divider.addEventListener('mousedown', e => { dragging = true; e.preventDefault(); });
+  document.addEventListener('mousemove', e => { if (dragging) setPos(e.clientX); });
+  document.addEventListener('mouseup', () => { dragging = false; });
+  wrap.addEventListener('click', e => setPos(e.clientX));
+
+  // Touch events
+  divider.addEventListener('touchstart', e => { dragging = true; e.preventDefault(); }, { passive: false });
+  document.addEventListener('touchmove', e => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
+  document.addEventListener('touchend', () => { dragging = false; });
+}
+
+/* ── DOWNLOAD ENHANCED IMAGE ── */
+function downloadEnhanced() {
+  if (!enhResultDataUrl) { showToast('No enhanced image yet', 'err'); return; }
+  const extMap = { jpeg: 'jpg', png: 'png', webp: 'webp' };
+  const filename = (document.getElementById('enh-filename').value.trim() || 'enhanced-photo') + '.' + (extMap[enhFmt] || 'jpg');
+
+  const a = document.createElement('a');
+  a.href = enhResultDataUrl;
+  a.download = filename;
+  document.body.appendChild(a); a.click();
+  setTimeout(() => document.body.removeChild(a), 500);
+
+  const btn = document.getElementById('enh-dl-btn');
+  btn.classList.add('done');
+  btn.innerHTML = '✓ Downloaded!';
+  setTimeout(() => {
+    btn.classList.remove('done');
+    btn.innerHTML = '<svg viewBox="0 0 18 18" fill="none"><path d="M9 2v10M5.5 8.5L9 12l3.5-3.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 14h14" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg> Download Enhanced Image';
+  }, 2500);
+  showToast('Enhanced photo downloaded!', 'ok');
+}
 
 /* ── INIT ── */
 showPage('home');
